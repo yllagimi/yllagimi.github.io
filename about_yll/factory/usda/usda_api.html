@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Our USDA foods</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <header>
+      </header>
+      <section>
+      </section>
+    <script>
+    var header = document.querySelector('header');
+    var section = document.querySelector('section');
+      
+    var api = 'https://api.nal.usda.gov/ndb/reports/V2?ndbno=';
+    var apiKey = '&api_key=17ZmHsEWaGtddNT26PffzyykXP1vVMX6i0CFpnCi';
+    var format = '&type=b&format=json';
+    var ndbno = '01009'
+    var requestURL = api + ndbno + format + apiKey;;
+    
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+        
+      var superHeroes = request.response;
+      populateHeader(superHeroes);
+      showHeroes(superHeroes);
+    }
+    function populateHeader(jsonObj) {
+      var myH1 = document.createElement('h1');
+      myH1.textContent = jsonObj['foods[0].food[0].desc[0].name'];
+      header.appendChild(myH1);
+      var myPara = document.createElement('p');
+      myPara.textContent = 'Hometown: ' + jsonObj['foods[0].food[0].nutrients[0].nutrient_id'] + ' // Formed: ' + jsonObj['foods[0].food[0].nutriets[0].value'];
+      header.appendChild(myPara);
+    }
+    function showHeroes(jsonObj) {
+      var heroes = jsonObj['foods[0].food[0].desc'];
+      for(var i = 0; i < heroes.length; i++) {
+        var myArticle = document.createElement('article');
+        var myH2 = document.createElement('h2');
+        var myPara1 = document.createElement('p');
+        var myPara2 = document.createElement('p');
+        var myPara3 = document.createElement('p');
+        var myList = document.createElement('ul');
+        myH2.textContent = heroes[i].name;
+        myPara1.textContent = 'Secret identity: ' + heroes[i].ds;
+        myPara2.textContent = 'Age: ' + heroes[i].ru;
+//        myPara3.textContent = 'Superpowers:';
+//        var superPowers = heroes[i].name;
+//        for(var j = 0; j < superPowers.length; j++) {
+//          var listItem = document.createElement('li');
+//          listItem.textContent = superPowers[j];
+//          myList.appendChild(listItem);
+//        }
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        myArticle.appendChild(myList);
+        section.appendChild(myArticle);
+      }
+    }
+    </script>
+  </body>
+</html>

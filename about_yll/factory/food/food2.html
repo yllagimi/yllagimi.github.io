@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+    </head>
+<body>
+
+    <h3>A little about yourself </h3>    
+
+
+<form id="f1" action="/action_page.php"> 
+
+First Name: <input type="text" id="fname" value=""><br>
+Last Name: <input type="text" id="lname" value=""><br>
+Female: <input type="checkbox" id="female" name="female" value="Female" ><br>
+Pregnant: <input type="checkbox" id="pregnant" name="pregnant" value="pregnant" ><br>
+Weight: <input type="number" id="weight" name="weight" value=""><br>
+Height: Feet <input type="number" id="height_f" name="height_f" value=""> Inches <input type="number" 
+id="height_i" name="height_i" value=""> <br>
+
+<!-- input type="submit" value = "Submit">-->
+</form>
+
+<form id ="f3"> Age
+<select id="age">
+<option value="1"> 18-24 </option>
+<option value="2"> 25-34 </option>
+<option value="3"> 35-44 </option>
+<option value="4"> 45-54 </option>
+<option value="5"> 55-64 </option>
+<option value="6"> 65 and older </option>
+</select>
+</form>
+
+<form id ="f4"> Race/Ethnicity
+<select id="race">
+<option value="1"> White </option>
+<option value="2"> Black </option>
+<option value="3"> Hispanic </option>
+<option value="4"> Asian </option>
+<option value="5"> Hawaiian or Pac. Islander </option>
+<option value="6"> Native American/Alaskan </option>
+<option value="6"> Multiracial or Other </option>
+</select>
+</form>
+
+<h3>Now some questions on risk factors, if any</h3>   
+
+
+<form id="f2">
+Do you smoke?
+<select id="smoking">
+  <option value="1">Current Smoker</option>
+  <option value="2">Smoked in the Past</option>
+  <option value="0">Never Smoked</option>
+  </select>
+</form>
+<br>
+<form id="f5">
+Have you EVER been told by a doctor, nurse or other health professional that: <br>
+Your blood pressure is high?
+<select id="hbp">
+  <option value="9">Don't Know</option>
+	<option value="1">Yes</option>
+  <option value="0">No</option>
+  </select>
+</form>
+<br>
+<form id="f6">
+You have high cholesterol?
+<select id="hcl">
+  <option value="9">Don't Know</option>
+  <option value="1">Yes</option>
+  <option value="0">No</option>
+  </select>
+</form>
+<br>
+<form id="f7">
+During the past month, did you participate in any physical activities or excercise?
+<select id="excercise">
+  <option value="9">Don't Know</option>
+  <option value="1">Yes</option>
+  <option value="0">No</option>
+  </select>
+</form>
+<br>
+    
+    
+
+<!-- This is where we ask for the getElementbyID function in js -->
+    
+<h3>Tell us a few things about your dietary preferences </h3>        
+   <form id="f8">
+       <h4> Select your preferred diets (Note: The more options selected the better the results.) </h4>
+    Low Carb Diet: <input type="checkbox" id="low_carb" value="Yes"><br>
+    High Protein Diet: <input type="checkbox" id="high_prot" value="Yes"><br>
+    Gluten Free: <input type="checkbox" id="glut_f"  value="Yes"><br>
+    Low Sodium: <input type="checkbox" id="low_sod" value="Yes"><br>
+    Weight Gain: <input type="checkbox" id="wght_gn" value="Yes"><br>
+    </form>
+
+<tr><td><label for="job_category">Allergies  </label></td><td><select name="job_category"  id='slt_job_category' size="10" multiple='multiple'>
+<option value="">- Select  -</option>
+<option value='1'>Eggs</option>
+<option value='2'>Nuts from trees (including hazelnuts, walnuts, almonds, and Brazil nuts) </option>
+<option value='3'>Peanuts (groundnuts) </option>
+<option value='4'>Wheat/Glutten products </option>
+<option value='5'>Fish</option>
+<option value='6'>All Dairy</option>
+<option value='7'>Shellfish (including shrimps, mussels, and crab)</option>
+<option value='24'>Other</option> 
+</select>
+</td></tr>
+    
+
+    
+    
+<h3>Foods that'll do you good </h3>    
+
+<p>Food options around you.</p>
+
+<p><button onclick="geoFindMe()">Show my location</button></p>
+<div id="out"></div>
+    
+<p><button onclick="loc()"> Location </button></p>
+<div id = "latitude"> </div>
+<div id = "longitude"> </div>
+
+<br> <button onclick="myFunction()">Get Results</button> <br>
+
+<!-- This is where we display js results -->
+
+<h3>What we got so far from you </h3>  
+    
+<br>
+<p> Your Demographic Data </p>
+Name <p id="info"></p>
+Female <p id="person"></p>
+Age <p id="age_r"></p>
+Weight/Height <p id="bmi"></p>
+Pregnant <p id="expecting"></p>
+
+Race <p id="race_r"></p>
+
+<p> Dietary preferences </p>
+Low Carb <p id='low_carb_r'></p>
+High Protein <p id='high_prot_r'></p>
+Gluten Free <p id='glut_f_r'></p>
+Low sodium <p id='low_sod_r'></p>
+Weight Gain <p id='wght_gn_r'></p>
+
+<p> Your Risk Factors </p>
+Smoking <p id="smoke_r"></p> 
+High Blood Pressure <p id="hpb_r"></p>
+High Cholesterol <p id="hcl_r"></p>
+<!--Excercise <p id="exc_r"></p>-->
+
+</body>
+	
+    
+<script>
+    
+function myFunction(){
+
+var first_name = document.getElementById("f1").fname.value; 
+var last_name = document.getElementById("f1").lname.value;
+var user_weight = document.getElementById("f1").weight.value;
+var user_height_ft = document.getElementById("f1").height_f.value;
+var user_height_in = document.getElementById("f1").height_i.value;
+var gender_f_v = document.getElementById("f1").female.checked;
+var pregnt_v = document.getElementById("f1").pregnant.checked;
+var age_v = document.getElementById("f3").age.value;
+var smoke_v = document.getElementById("f2").smoking.value;
+var race_v = document.getElementById("f4").race.value;
+var hbp_v = document.getElementById("f5").hbp.value;
+var hcl_v = document.getElementById("f6").hcl.value;
+    var exc_v= document.getElementById("f7").excercise.value;
+
+    var low_carb_v = document.getElementById("f8").low_carb.checked;
+    var high_prot_v = document.getElementById("f8").high_prot.checked;
+    var glut_f_v = document.getElementById("f8").glut_f.checked;
+    var low_sod_v = document.getElementById("f8").low_sod.checked;
+    var wght_gn_v = document.getElementById("f8").wght_gn.checked;
+   
+   document.getElementById("info").innerHTML = (first_name + " " + last_name);
+   document.getElementById("bmi").innerHTML = (user_weight + " " + user_height_ft + "' " +  user_height_in + "''");
+   document.getElementById("person").innerHTML = gender_f_v;
+   document.getElementById("expecting").innerHTML = pregnt_v;
+   document.getElementById("smoke_r").innerHTML = smoke_v;
+    document.getElementById("age_r").innerHTML = age_v;
+    document.getElementById("race_r").innerHTML = race_v;
+    document.getElementById("hpb_r").innerHTML = hbp_v;
+    document.getElementById("hcl_r").innerHTML = hcl_v;
+    document.getElementbyID("exc_r").innerHTML = exc_v;
+    
+      document.getElementbyID("low_carb_r").innerHTML = low_carb_v;
+      document.getElementbyID("high_prot_r").innerHTML = high_prot_v;
+      document.getElementbyID("glut_f_r").innerHTML = glut_f_v;
+      document.getElementbyID("low_sod_r").innerHTML = low_sod_v;
+      document.getElementbyID("wght_gn_r").innerHTML = wght_gn_v;
+}
+
+
+function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
+  }
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+    var img = new Image();
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+    output.appendChild(img);
+  }
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  }
+  output.innerHTML = "<p>Locating…</p>";
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+
+
+
+</script>
+
+</html>

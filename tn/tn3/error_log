@@ -1,0 +1,250 @@
+[22-May-2019 20:40:52 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[22-May-2019 20:41:20 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[22-May-2019 20:47:01 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[22-May-2019 20:47:06 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[22-May-2019 20:47:10 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/register.php on line 14
+[22-May-2019 20:48:11 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[22-May-2019 20:48:16 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[22-May-2019 20:52:48 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[22-May-2019 20:52:51 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[22-May-2019 20:52:53 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/register.php on line 14
+[22-May-2019 21:24:58 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[22-May-2019 21:25:05 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[22-May-2019 21:25:22 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/register.php on line 14
+[22-May-2019 21:28:05 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/register.php on line 14
+[22-May-2019 21:28:23 America/Chicago] PHP Warning:  mysqli::mysqli(): (42000/1044): Access denied for user 'yllagimi_demo'@'localhost' to database 'yllagimi_santi' in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[22-May-2019 21:29:27 America/Chicago] PHP Warning:  mysqli::mysqli(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (0) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[22-May-2019 21:34:03 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[22-May-2019 21:35:51 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/register.php on line 14
+[22-May-2019 21:37:04 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagimi'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/register.php on line 14
+[22-May-2019 21:37:50 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagimi'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/login.php on line 14
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[22-May-2019 21:38:36 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[22-May-2019 21:42:21 America/Chicago] PHP Warning:  move_uploaded_file(C:/xampp/htdocs/tn/tn3/uploads/Tulips.jpg): failed to open stream: No such file or directory in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 112
+[22-May-2019 21:42:21 America/Chicago] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpUuhsp7' to 'C:/xampp/htdocs/tn/tn3/uploads/Tulips.jpg' in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 112
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[23-Jun-2019 22:07:59 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[23-Jun-2019 22:08:45 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[23-Jun-2019 22:08:57 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[23-Jun-2019 22:09:46 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[23-Jun-2019 22:10:01 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/login.php on line 14
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[23-Jun-2019 22:10:13 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[23-Jun-2019 22:10:23 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[23-Jun-2019 22:10:26 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[23-Jun-2019 22:10:35 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[23-Jun-2019 22:11:08 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[23-Jun-2019 22:24:58 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[23-Jun-2019 22:26:34 America/Chicago] PHP Warning:  mysqli::mysqli(): (HY000/2005): Unknown MySQL server host 'root' (0) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[23-Jun-2019 22:27:39 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 7
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[23-Jun-2019 22:29:20 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348
+[23-Jun-2019 22:42:08 America/Chicago] PHP Warning:  move_uploaded_file(C:/xampp/htdocs/tn/tn3/uploads/Spotify Tv Commercial - Client  Spotify.mp4): failed to open stream: No such file or directory in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 112
+[23-Jun-2019 22:42:08 America/Chicago] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phplN4YQJ' to 'C:/xampp/htdocs/tn/tn3/uploads/Spotify Tv Commercial - Client  Spotify.mp4' in /home4/yllagimi/public_html/tn/tn3/pserver.php on line 112
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 167
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 169
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 175
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 177
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 178
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 264
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 266
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 272
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 274
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 276
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'yllagimi_yllagim'@'localhost' (using password: YES) in /home4/yllagimi/public_html/tn/tn3/index.php on line 339
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 341
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 344
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home4/yllagimi/public_html/tn/tn3/index.php on line 347
+[10-Jul-2019 08:33:36 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/yllagimi/public_html/tn/tn3/index.php on line 348

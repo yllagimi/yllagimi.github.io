@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <?php header('content-type: application/json; charset=utf-8');
+
+$data = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+echo $_GET['callback'] . '('.json_encode($data).')'; ?>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"></script>
+    <script src="sketch.js"></script>
+<script src="libraries/p5.js" type="text/javascript"> </script>
+<script src="libraries/p5.dom.js" type="text/javascript">   </script>
+<script src="libraries/p5.sound.js" type="text/javascript">  </script>
+<script src="sketch.js" type="text/javascript">  </script>
+
+<style>
+body {padding: 0; margin: 0;} canvas {vertical}
+
+</style>
+
+</head>
+
+<title> weather data</title>
+
+<body>
+City: <input id="city" value="e.g. London">
+<button id="submit">  Submit </button>
+
+
+
+
+<script> 
+var weather;
+/*var url = 'https://api.nal.usda.gov/ndb/reports/V2?ndbno=01009&ndbno=01009&ndbno=45202763&ndbno=35193&type=b&format=json&api_key=17ZmHsEWaGtddNT26PffzyykXP1vVMX6i0CFpnCi' ; */
+
+var api = 'https://api.nal.usda.gov/ndb/reports/V2?ndbno=';
+/*var city = '01009';*/
+var apiKey = '&api_key=17ZmHsEWaGtddNT26PffzyykXP1vVMX6i0CFpnCi';
+var format = '&type=b&format=json';
+var input; /* this replaced var city above*/
+
+function setup() {
+ createCanvas(400, 200);
+  var button = select('#submit');
+  button.mousePressed(weatherAsk);
+  input = select('#city');
+  }
+  
+  function weatherAsk(){
+  var url = api + input.value() + format + apiKey;
+  loadJSON(url, gotData);
+}
+
+
+function gotData(data){
+    println(data);
+/*weather = data;*/
+}
+
+function draw(){
+background(0);
+if (weather) {
+var cf = weather.desc.cf;
+var ff = weather.desc.ff;
+ellipse(100, 100, cf, cf);
+ellipse(300, 100, ff, ff);
+}
+}
+
+</script>
+</body>
+</html>

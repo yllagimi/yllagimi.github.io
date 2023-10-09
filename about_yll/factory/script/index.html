@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Copying Heroes Example</title>
+    
+<!--
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+-->
+    
+</head>
+<body>
+    
+    <form id='form2'>
+  NDBNO:<br>
+  <input type="text" name="ndbno" value="45093253">
+  <br>
+  <br><br>
+  <input id="ClickMe" type="button" value="Submit" onclick="loadXMLDoc();" />
+</form> 
+    
+<h1> Results below</h1>
+
+<header></header>
+<section></section>
+
+    <!--  -----------  SRIPTS------------>
+
+
+<script>
+var header = document.querySelector('header');
+var section = document.querySelector('section');
+//var requestURL = 'https://api.nal.usda.gov/ndb/V2/reports?ndbno=45093253&type=b&format=json&api_key=17ZmHsEWaGtddNT26PffzyykXP1vVMX6i0CFpnCi';
+
+
+var api = "https://api.nal.usda.gov/ndb/V2/reports?ndbno=";
+var ndbno = document.getElementById("form2").ndbno.value;
+var type = "&type=b";  //Report type: [b]asic or [f]ull or [s]tats//
+var format = "&format=json"; 
+var apiKey = "&api_key=17ZmHsEWaGtddNT26PffzyykXP1vVMX6i0CFpnCi";  
+        
+function setup() {
+    
+var button = select('#submit');
+    button.mousePressed(request);
+    
+    input = select('#city');
+}
+    
+function weatherAsk() {
+    var url = api + input.value() + type + format + apiKey;
+    loadJSON(url, gotData);
+}
+    
+function gotData(data) {
+    weather = data;
+}
+    
+
+    var api = "https://api.nal.usda.gov/ndb/V2/reports?ndbno=";
+    var ndbno = document.getElementById("form2").ndbno.value;
+    var type = "&type=b";  //Report type: [b]asic or [f]ull or [s]tats//
+    var format = "&format=json"; 
+    var apiKey = "&api_key=17ZmHsEWaGtddNT26PffzyykXP1vVMX6i0CFpnCi";
+    var requestURL = api + ndbno + type + format + apiKey;  
+    
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL, true);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+    var foodDesc = request.response;
+    populateHeader(foodDesc);
+    }
+    request.onload = function populateHeader(jsonObj) {
+    var foods = jsonObj['foods'];
+    var myArticle = 
+        document.createElement('article');
+    var myH1 = document.createElement('h1');
+    myH1.textContent = foods[0].food.sr;
+    header.appendChild(myH1);
+    var myPara = document.createElement('p');
+    myPara.textContent = 'USDA ID: ' + 
+        foods[0].food.desc.name  + ' // Calories: ' + foods[0].food.nutrients[0].value;
+    header.appendChild(myPara);
+}   
+
+    
+    
+    
+//console.log(requestURL);    
+//console.log(populateHeader)
+// console.log(loadXMLDoc)
+    </script>
+    </body>  
+</html>
