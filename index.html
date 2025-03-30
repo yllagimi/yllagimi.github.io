@@ -14,39 +14,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yll Agimi - Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            background-color: #f4f4f4;
-        }
-        nav {
-            width: 200px;
-            background-color: #333;
-            color: #fff;
-            height: 100vh;
-            position: fixed;
-            padding-top: 20px;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            padding: 10px;
-            text-align: center;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-        }
-        nav ul li a:hover {
-            background-color: #575757;
-        }
-        main {
-            margin-left: 200px;
+        
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar: Hidden by Default */
+.sidebar {
+    width: 70px;  /* Initially collapsed */
+    background: #333;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 50
+    left: 0;
+    padding-top: 20px;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Expand Sidebar on Hover */
+.sidebar:hover {
+    width: 200px;
+}
+
+/* Sidebar List */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Sidebar Items */
+.sidebar li {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Sidebar Links */
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0px;
+    font-size: 16px;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Show Links When Sidebar Expands */
+.sidebar:hover a {
+    opacity: 1;
+}
+
+/* Main Content Adjusts */
+.content {
+    margin-left: 0px;  /* Adjusted for collapsed sidebar */
+    padding: 0px;
+    transition: margin-left 0.3s ease-in-out;
+    width: 100%;
+}
+    main {
+            margin-left: 60px;
             padding: 20px;
             flex-grow: 1;
         }
@@ -111,21 +145,37 @@
         .writing-item a:hover {
             text-decoration: underline;
         }
+
+
+/* When Sidebar Expands, Shift Content */
+.sidebar:hover + .content {
+    margin-left: 250px;
+}
+
     </style>
 </head>
 <body>
         
 
     <nav>
+            <div id="sidebar" class="sidebar">
+        <button id="toggleBtn">☰ MENU </button>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#writings">Writings</a></li>
             <li><a href="#pubs">Publications &amp; Press </a></li>
-            <li><a href="/workshop.html">Workshop</a></li>
+            <li><a href="/workshop.html">Tools </a></li>
+            <li><a href="#writings">Writings</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+                   </div>
+        
+            <div class="content">
+        <h1></h1>
+        <p>Toggle.</p>
+    </div>
+
     </nav>
 
     <main>
@@ -191,24 +241,7 @@
                 </div>
             </div>
         </section>
-        <section id="writings" class="section">
-            <h2>Writings</h2>
-            <div class="writings-container">
-                <div class="writing-item">
-                    <h3><a href="/content/Congress%20and%20the%20Eternal%20Wisdom%20of%20Leonardo%20DiCaprio.docx" target="_blank">Congress and the Eternal Wisdom of Leonardo DiCaprio</a></h3>
-                    <p>How Politicians Lost to Someone Who Died in the Titanic...and you won’t believe what happened next!</p>
-                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vS7hnEb429GZUO5m5tYKDmPARxaWIESupu4lWc40MjWj1xzvSeUVv3-tgKXJ-rkuG1LNaz9xOFGEysu/pub?embedded=true" width = "1600" height="300" title="Satire on our obession with what celebrities think"></iframe>
-                </div>
-                <div class="writing-item">
-                    <h3><a href="writing2.html" target="_blank">Article Title 2</a></h3>
-                    <p>Short description or excerpt from the article.</p>
-                </div>
-                <div class="writing-item">
-                    <h3><a href="writing3.html" target="_blank">Article Title 3</a></h3>
-                    <p>Short description or excerpt from the article.</p>
-                </div>
-            </div>
-        </section>
+        
         <section id="pubs" class="section">
             <h2>Studies </h2>
             <ul>
@@ -241,7 +274,26 @@
 
             </ul>
         </section>
-
+        <section id="writings" class="section">
+            <h2>Writings</h2>
+            <div class="writings-container">
+                <div class="writing-item">
+                    <h3><a href="/content/Congress%20and%20the%20Eternal%20Wisdom%20of%20Leonardo%20DiCaprio.docx" target="_blank">Congress and the Eternal Wisdom of Leonardo DiCaprio</a></h3>
+                    <p>How Politicians Lost to Someone Who Died in the Titanic...and you won’t believe what happened next!</p>
+                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vS7hnEb429GZUO5m5tYKDmPARxaWIESupu4lWc40MjWj1xzvSeUVv3-tgKXJ-rkuG1LNaz9xOFGEysu/pub?embedded=true" width = "1600" height="300" title="Satire on our obession with what celebrities think"></iframe>
+                </div>
+                <!--
+                <div class="writing-item">
+                    <h3><a href="writing2.html" target="_blank">Article Title 2</a></h3>
+                    <p>Short description or excerpt from the article.</p>
+                </div>
+                <div class="writing-item">
+                    <h3><a href="writing3.html" target="_blank">Article Title 3</a></h3>
+                    <p>Short description or excerpt from the article.</p>
+                </div>
+                -->
+            </div>
+        </section>
         <section id="contact" class="section">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:yll.agimi@gmail.com">yll.agimi@gmail.com</a></p>
@@ -249,6 +301,9 @@
             <!-- Add other contact methods as needed -->
         </section>
     </main>
+
+    
+        <script src="toggle.js"></script>
 
 </body>
 </html>
