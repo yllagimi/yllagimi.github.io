@@ -16,60 +16,66 @@
     <style>
         
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    background-color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
-/* Sidebar: Hidden by Default */
-.sidebar {
-    width: 70px;  /* Initially collapsed */
-    background: #333;
-    color: white;
-    height: 100vh;
-    position: fixed;
-    top: 50
-    left: 0;
-    padding-top: 20px;
-    transition: width 0.3s ease-in-out;
-    overflow: hidden;
-    white-space: nowrap;
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
 }
 
-/* Expand Sidebar on Hover */
-.sidebar:hover {
-    width: 200px;
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-/* Sidebar List */
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.subnav {
+  float: left;
+  overflow: hidden;
 }
 
-/* Sidebar Items */
-.sidebar li {
-    padding: 10px;
-    text-align: left;
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
-/* Sidebar Links */
-.sidebar a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 0px;
-    font-size: 16px;
-    opacity: 0; /* Hidden initially */
-    transition: opacity 0.2s ease-in-out;
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
 }
 
-/* Show Links When Sidebar Expands */
-.sidebar:hover a {
-    opacity: 1;
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
 }
 
 /* Main Content Adjusts */
@@ -156,27 +162,61 @@ body {
 </head>
 <body>
         
-
-    <nav>
-            <div id="sidebar" class="sidebar">
-        <button id="toggleBtn">☰ MENU </button>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#pubs">Publications &amp; Press </a></li>
-            <li><a href="/workshop.html">Tools </a></li>
-            <li><a href="#writings">Writings</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-                   </div>
-        
-            <div class="content">
-        <h1></h1>
-        <p>Toggle.</p>
+<div class="navbar">
+  <a href="#home">Home</a>
+  <div class="subnav">
+    <button class="subnavbtn"> About <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#abour">About</a>
+      <!--
+      <a href="#team">Team</a>
+      <a href="#careers">Careers</a>
+      -->
     </div>
-
-    </nav>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#bring">Teaching</a>
+      <a href="#deliver">Consulting</a>
+     </div>
+  </div>
+  <div class="subnav">
+    <button class="subnavbtn">Portfolio <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#portfolio">Portfolio</a>
+      <!--
+      <a href="#deliver">Deliver</a>
+      <a href="#package">Package</a>
+      <a href="#express">Express</a>
+      -->
+    </div>
+  </div>
+<a href="#pubs">Studies</a>
+   <div class="subnav">
+    <button class="subnavbtn">Tools <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="/workshop.html">Stat Test Selector</a>
+      <a href="/pathway.html">Pathway Modeler</a>
+      <!--
+      <a href="#tool3">Tool 3</a>
+      <a href="#tool4">Tool 3</a>
+      -->
+    </div>
+  </div>
+     <div class="subnav">
+    <button class="subnavbtn">Writing <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#writings">Leo</a>
+      <!--
+      <a href="#writings">Writing 2</a>
+      <a href="#writings">Writing 3</a>
+      <a href="#writings">Writing 4</a>
+      -->
+    </div>
+  </div>
+  <a href="#contact">Contact</a>
+</div>
 
     <main>
         <section id="about" class="section">
