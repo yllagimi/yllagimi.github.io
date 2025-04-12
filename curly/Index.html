@@ -226,19 +226,31 @@
         
         // Function to create post data from local files
         async function createPostData(postId) {
-            const title = await loadTextFile(`${CONTENT_FOLDER}/${postId}/title.txt`);
-            const caption = await loadTextFile(`${CONTENT_FOLDER}/${postId}/summary.txt`);
-            const image = `${IMAGE_FOLDER}/${postId}/image.png`;
-            const likes = Math.floor(Math.random() * 5000).toLocaleString();
-            
-            return {
-                id: postId,
-                title: title.trim(),
-                image: image,
-                likes: likes,
-                caption: caption.trim()
-            };
-        }
+        const apiBase = 'https://curly-api.onrender.com/api/posts/';  // Change to your Render URL
+        try {
+        const response = await fetch(`${apiBase}${postId}`);
+        if (!response.ok) throw new Error(`Failed to load post ${postId}`);
+        const data = await response.json();
+
+        return {
+            id: postId,
+            title: data.title,
+            caption: data.caption,
+            image: `https://curly-api.onrender.com${data.image}`,
+            likes: data.likes.toLocaleString()
+        };
+    }   catch (error) {
+        console.error(`Error loading post ${postId}:`, error);
+        return {
+            id: postId,
+            title: 'Error loading title',
+            caption: 'Error loading caption',
+            image: 'https://via.placeholder.com/600?text=Image+Unavailable',
+            likes: '0'
+        };
+    }
+}
+
         
         // Function to truncate text to 60 words
         function truncateToWords(text, wordCount) {
