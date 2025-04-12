@@ -231,53 +231,126 @@
     }
 
     // Create styled post element
-    function createPostElement(post) {
-        const previewCaption = truncateToWords(post.caption, 60);
-        const fullCaption = post.caption;
-        const shouldShowExpand = previewCaption !== fullCaption;
+function createPostElement(post) {
+    // Main post container
+    const postElement = document.createElement('div');
+    postElement.className = 'post';
+    postElement.id = post.id;
 
-        const postElement = document.createElement('div');
-        postElement.className = 'post';
-        postElement.id = post.id;
+    // 1. Post Header
+    const postHeader = document.createElement('div');
+    postHeader.className = 'post-header';
+    
+    const profilePic = document.createElement('div');
+    profilePic.className = 'profile-pic';
+    
+    const title = document.createElement('div');
+    title.className = 'title';
+    title.textContent = post.title; // Safe because we'll escape it
+    
+    postHeader.appendChild(profilePic);
+    postHeader.appendChild(title);
 
-        postElement.innerHTML = `
-            <div class="post-header">
-                <div class="profile-pic"></div>
-                <div class="title">${post.title}</div>
-            </div>
-            <img class="post-image" src="${post.image}" alt="Post image" onerror="this.src='https://via.placeholder.com/600?text=Image+Not+Found'">
-            <div class="post-actions">
-                <div class="action-left">
-                    <span class="action-icon">♥</span>
-                    <span class="action-icon">💬</span>
-                    <span class="action-icon">↗</span>
-                </div>
-                <div class="share-btn" title="Share post">
-                    <span class="tooltip">Copy post link</span>
-                    🔗
-                </div>
-            </div>
-            <div class="likes">${post.likes} likes</div>
-            <div class="caption">
-                <span class="caption-preview">${previewCaption}</span>
-                <span class="caption-full">${fullCaption}</span>
-                ${shouldShowExpand ? '<span class="expand-btn">more</span>' : ''}
-            </div>
-        `;
+    // 2. Post Image
+    const postImage = document.createElement('img');
+    postImage.className = 'post-image';
+    postImage.src = post.image || 'https://via.placeholder.com/600?text=No+Image';
+    postImage.alt = 'Post image';
+    postImage.onerror = function() {
+        this.src = 'https://via.placeholder.com/600?text=Image+Not+Found';
+    };
 
-        const expandBtn = postElement.querySelector('.expand-btn');
-        if (expandBtn) {
-            expandBtn.addEventListener('click', function () {
-                const captionDiv = this.parentElement;
-                captionDiv.classList.toggle('expanded');
-                this.textContent = captionDiv.classList.contains('expanded') ? 'less' : 'more';
-            });
-        }
+    // 3. Post Actions
+    const postActions = document.createElement('div');
+    postActions.className = 'post-actions';
+    
+    const actionLeft = document.createElement('div');
+    actionLeft.className = 'action-left';
+    
+    const likeBtn = document.createElement('span');
+    likeBtn.className = 'action-icon';
+    likeBtn.textContent = '♥';
+    
+    const commentBtn = document.createElement('span');
+    commentBtn.className = 'action-icon';
+    commentBtn.textContent = '💬';
+    
+    const shareBtn = document.createElement('span');
+    shareBtn.className = 'action-icon';
+    shareBtn.textContent = '↗';
+    
+    actionLeft.appendChild(likeBtn);
+    actionLeft.appendChild(commentBtn);
+    actionLeft.appendChild(shareBtn);
+    
+    const shareMainBtn = document.createElement('div');
+    shareMainBtn.className = 'share-btn';
+    shareMainBtn.title = 'Share post';
+    
+    const tooltip = document.createElement('span');
+    tooltip.className = 'tooltip';
+    tooltip.textContent = 'Copy post link';
+    
+    shareMainBtn.appendChild(tooltip);
+    shareMainBtn.appendChild(document.createTextNode('🔗'));
+    
+    postActions.appendChild(actionLeft);
+    postActions.appendChild(shareMainBtn);
 
-        postElement.querySelector('.share-btn').addEventListener('click', () => copyPostLink(post.id));
+    // 4. Likes
+    const likes = document.createElement('div');
+    likes.className = 'likes';
+    likes.textContent = `${post.likes || 0} likes`;
 
-        return postElement;
+    // 5. Caption
+    const caption = document.createElement('div');
+    caption.className = 'caption';
+    
+    const previewCaption = truncateToWords(post.caption || '', 60);
+    const fullCaption = post.caption || '';
+    const shouldShowExpand = previewCaption !== fullCaption;
+    
+    const captionPreview = document.createElement('span');
+    captionPreview.className = 'caption-preview';
+    captionPreview.textContent = previewCaption;
+    
+    const captionFull = document.createElement('span');
+    captionFull.className = 'caption-full';
+    captionFull.textContent = fullCaption;
+    
+    caption.appendChild(captionPreview);
+    caption.appendChild(captionFull);
+    
+    if (shouldShowExpand) {
+        const expandBtn = document.createElement('span');
+        expandBtn.className = 'expand-btn';
+        expandBtn.textContent = 'more';
+        expandBtn.addEventListener('click', function() {
+            caption.classList.toggle('expanded');
+            this.textContent = caption.classList.contains('expanded') ? 'less' : 'more';
+        });
+        caption.appendChild(expandBtn);
     }
+
+    // Add all elements to post container
+    postElement.appendChild(postHeader);
+    postElement.appendChild(postImage);
+    postElement.appendChild(postActions);
+    postElement.appendChild(likes);
+    postElement.appendChild(caption);
+
+    // Add share functionality
+    shareMainBtn.addEventListener('click', () => copyPostLink(post.id));
+
+    return postElement;
+}
+
+// Helper function to safely escape HTML (prevent XSS)
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
 
     // Scroll to post if hash is in URL
     function handleHashChange() {
