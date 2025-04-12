@@ -30,7 +30,7 @@
             font-size: 20px;
         }
         
-        .feed {
+        .container {
             max-width: 600px;
             margin: 0 auto;
             padding-bottom: 20px;
@@ -189,7 +189,7 @@
         <div>✚</div>
     </div>
     
-    <div class="feed" id="feed">
+    <div class="post-container" id="post-container">
         <!-- Posts will be added here by JavaScript -->
     </div>
     
@@ -197,59 +197,45 @@
     
     <div id="customAlert" class="custom-alert">Link Copied!</div>
     
-    <script>
-        // Folder structure configuration
-        const CONTENT_FOLDER = 'content';
-        const IMAGE_FOLDER = 'content';
-        
-        // Post IDs - these should match your folder names
-        const postIds = ['output_001', 'output_002', 'output_003', 'output_004', 
-                         'output_005', 'output_006', 'output_007', 'output_008', 
-                         'output_009', 'output_010', 'output_011', 'output_012', 'output_013',
-                        'output_014', 'output_015', 'output_016', 'output_017',
-                        'output_018', 'output_019', 'output_020', 'output_021',
-                        'output_022', 'output_023', 'output_024', 'output_025', 
-                         'output_026', 'output_027', 'output_028', 'output_029', 'output_030',
-                         "output_031", "output_032"];
-        
-        // Function to load text file
-        async function loadTextFile(filename) {
-            try {
-                const response = await fetch(filename);
-                if (!response.ok) throw new Error('File not found');
-                return await response.text();
-            } catch (error) {
-                console.error(`Error loading file ${filename}:`, error);
-                return `Content could not be loaded from ${filename}`;
-            }
-        }
-        
-        // Function to create post data from local files
-        async function createPostData(postId) {
-        const apiBase = 'https://curly-api.onrender.com/posts.json';  // Change to your Render URL
-        try {
-        const response = await fetch(`${apiBase}${postId}`);
-        if (!response.ok) throw new Error(`Failed to load post ${postId}`);
-        const data = await response.json();
+<script>
 
-        return {
-            id: postId,
-            title: data.title,
-            caption: data.caption,
-            image: `https://curly-api.onrender.com${data.image}`,
-            likes: data.likes.toLocaleString()
-        };
-    }   catch (error) {
-        console.error(`Error loading post ${postId}:`, error);
-        return {
-            id: postId,
-            title: 'Error loading title',
-            caption: 'Error loading caption',
-            image: 'https://via.placeholder.com/600?text=Image+Unavailable',
-            likes: '0'
-        };
+    const API_URL = 'https://curly-api.onrender.com/posts.json';
+
+    async function fetchAllPosts() {
+        try {
+            const response = await fetch(API_URL);
+            if (!response.ok) throw new Error('Failed to fetch posts.json');
+            const posts = await response.json();
+            return posts;
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+            return [];
+        }
     }
-}
+
+    function renderPost(post) {
+        const container = document.getElementById('posts-container');
+
+        const postDiv = document.createElement('div');
+        postDiv.className = 'post';
+
+        postDiv.innerHTML = `
+            <img src="${post.image}" alt="Post Image" class="post-image">
+            <h2>${post.title}</h2>
+            <p>${post.caption}</p>
+            <p>❤️ ${post.likes}</p>
+        `;
+
+        container.appendChild(postDiv);
+    }
+
+    async function init() {
+        const posts = await fetchAllPosts();
+        posts.forEach(renderPost);
+    }
+
+    // Run on page load
+    window.addEventListener('DOMContentLoaded', init);
 
         
         // Function to truncate text to 60 words
@@ -345,16 +331,16 @@
             }
         }
         
-        // Initialize the feed
+        // Initialize the container 
         async function initializeFeed() {
-            const feed = document.getElementById('feed');
+            const container  = document.getElementById('posts-container');
             
             // Load and display all posts
             for (const postId of postIds) {
                 try {
                     const postData = await createPostData(postId);
                     const postElement = createPostElement(postData);
-                    feed.appendChild(postElement);
+                    container.appendChild(postElement);
                 } catch (error) {
                     console.error(`Error loading post ${postId}:`, error);
                 }
