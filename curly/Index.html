@@ -198,168 +198,125 @@
     <div id="customAlert" class="custom-alert">Link Copied!</div>
     
 <script>
-
     const API_URL = 'https://curly-api.onrender.com/posts.json';
 
-    async function fetchAllPosts() {
-        try {
-            const response = await fetch(API_URL);
-            if (!response.ok) throw new Error('Failed to fetch posts.json');
-            const posts = await response.json();
-            return posts;
-        } catch (error) {
-            console.error('Error fetching posts:', error);
-            return [];
-        }
+    // Truncate text to 60 words
+    function truncateToWords(text, wordCount) {
+        if (!text) return "";
+        const words = text.split(' ');
+        if (words.length <= wordCount) return text;
+        return words.slice(0, wordCount).join(' ') + '...';
     }
 
-    function renderPost(post) {
-        const container = document.getElementById('posts-container');
+    // Custom alert message
+    function showAlert(message) {
+        const alert = document.getElementById('customAlert');
+        alert.textContent = message;
+        alert.classList.add('show');
+        setTimeout(() => alert.classList.remove('show'), 2000);
+    }
 
-        const postDiv = document.createElement('div');
-        postDiv.className = 'post';
+    // Copy post link
+    function copyPostLink(postId) {
+        const postLink = `${window.location.origin}${window.location.pathname}#${postId}`;
+        navigator.clipboard.writeText(postLink)
+            .then(() => showAlert("Link Copied!"))
+            .catch(err => {
+                console.error('Failed to copy link:', err);
+                showAlert("Failed to copy link");
+            });
+    }
 
-        postDiv.innerHTML = `
-            <img src="${post.image}" alt="Post Image" class="post-image">
-            <h2>${post.title}</h2>
-            <p>${post.caption}</p>
-            <p>❤️ ${post.likes}</p>
+    // Create styled post element
+    function createPostElement(post) {
+        const previewCaption = truncateToWords(post.caption, 60);
+        const fullCaption = post.caption;
+        const shouldShowExpand = previewCaption !== fullCaption;
+
+        const postElement = document.createElement('div');
+        postElement.className = 'post';
+        postElement.id = post.id;
+
+        postElement.innerHTML = `
+            <div class="post-header">
+                <div class="profile-pic"></div>
+                <div class="title">${post.title}</div>
+            </div>
+            <img class="post-image" src="${post.image}" alt="Post image" onerror="this.src='https://via.placeholder.com/600?text=Image+Not+Found'">
+            <div class="post-actions">
+                <div class="action-left">
+                    <span class="action-icon">♥</span>
+                    <span class="action-icon">💬</span>
+                    <span class="action-icon">↗</span>
+                </div>
+                <div class="share-btn" title="Share post">
+                    <span class="tooltip">Copy post link</span>
+                    🔗
+                </div>
+            </div>
+            <div class="likes">${post.likes} likes</div>
+            <div class="caption">
+                <span class="caption-preview">${previewCaption}</span>
+                <span class="caption-full">${fullCaption}</span>
+                ${shouldShowExpand ? '<span class="expand-btn">more</span>' : ''}
+            </div>
         `;
 
-        container.appendChild(postDiv);
+        const expandBtn = postElement.querySelector('.expand-btn');
+        if (expandBtn) {
+            expandBtn.addEventListener('click', function () {
+                const captionDiv = this.parentElement;
+                captionDiv.classList.toggle('expanded');
+                this.textContent = captionDiv.classList.contains('expanded') ? 'less' : 'more';
+            });
+        }
+
+        postElement.querySelector('.share-btn').addEventListener('click', () => copyPostLink(post.id));
+
+        return postElement;
     }
 
-    async function init() {
-        const posts = await fetchAllPosts();
-        posts.forEach(renderPost);
+    // Scroll to post if hash is in URL
+    function handleHashChange() {
+        const postId = window.location.hash.substring(1);
+        if (postId) {
+            const postElement = document.getElementById(postId);
+            if (postElement) {
+                setTimeout(() => {
+                    postElement.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
     }
 
-    // Run on page load
-    window.addEventListener('DOMContentLoaded', init);
+    // Main init function
+    async function initializeFeed() {
+        const container = document.getElementById('posts-container');
+        try {
+            const response = await fetch(API_URL);
+            const posts = await response.json();
 
-        
-        // Function to truncate text to 60 words
-        function truncateToWords(text, wordCount) {
-            if (!text) return "";
-            const words = text.split(' ');
-            if (words.length <= wordCount) return text;
-            return words.slice(0, wordCount).join(' ') + '...';
-        }
-        
-        // Function to show custom alert
-        function showAlert(message) {
-            const alert = document.getElementById('customAlert');
-            alert.textContent = message;
-            alert.classList.add('show');
-            setTimeout(() => {
-                alert.classList.remove('show');
-            }, 2000);
-        }
-        
-        // Function to copy post link to clipboard
-        function copyPostLink(postId) {
-            const postLink = `${window.location.origin}${window.location.pathname}#${postId}`;
-            navigator.clipboard.writeText(postLink)
-                .then(() => {
-                    showAlert("Link Copied!");
-                })
-                .catch(err => {
-                    console.error('Failed to copy link: ', err);
-                    showAlert("Failed to copy link");
-                });
-        }
-        
-        // Function to create a post element
-        function createPostElement(post) {
-            const previewCaption = truncateToWords(post.caption, 60);
-            const fullCaption = post.caption;
-            const shouldShowExpand = previewCaption !== fullCaption;
-            
-            const postElement = document.createElement('div');
-            postElement.className = 'post';
-            postElement.id = post.id;
-            postElement.innerHTML = `
-                <div class="post-header">
-                    <div class="profile-pic"></div>
-                    <div class="title">${post.title}</div>
-                </div>
-                <img class="post-image" src="${post.image}" alt="Post image" onerror="this.src='https://via.placeholder.com/600?text=Image+Not+Found'">
-                <div class="post-actions">
-                    <div class="action-left">
-                        <span class="action-icon">♥</span>
-                        <span class="action-icon">💬</span>
-                        <span class="action-icon">↗</span>
-                    </div>
-                    <div class="share-btn" title="Share post">
-                        <span class="tooltip">Copy post link</span>
-                        🔗
-                    </div>
-                </div>
-                <div class="likes">${post.likes} likes</div>
-                <div class="caption">
-                    <span class="caption-preview">${previewCaption}</span>
-                    <span class="caption-full">${fullCaption}</span>
-                    ${shouldShowExpand ? '<span class="expand-btn">more</span>' : ''}
-                </div>
-            `;
-            
-            // Add event listeners
-            const expandBtn = postElement.querySelector('.expand-btn');
-            if (expandBtn) {
-                expandBtn.addEventListener('click', function() {
-                    const captionDiv = this.parentElement;
-                    captionDiv.classList.toggle('expanded');
-                    this.textContent = captionDiv.classList.contains('expanded') ? 'less' : 'more';
-                });
-            }
-            
-            postElement.querySelector('.share-btn').addEventListener('click', () => copyPostLink(post.id));
-            
-            return postElement;
-        }
-        
-        // Function to handle hash changes
-        function handleHashChange() {
-            const postId = window.location.hash.substring(1);
-            if (postId) {
-                const postElement = document.getElementById(postId);
-                if (postElement) {
-                    setTimeout(() => {
-                        postElement.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }
-            }
-        }
-        
-        // Initialize the container 
-        async function initializeFeed() {
-            const container  = document.getElementById('posts-container');
-            
-            // Load and display all posts
-            for (const postId of postIds) {
-                try {
-                    const postData = await createPostData(postId);
-                    const postElement = createPostElement(postData);
-                    container.appendChild(postElement);
-                } catch (error) {
-                    console.error(`Error loading post ${postId}:`, error);
-                }
-            }
-            
-            // Update loading message
-            document.querySelector('.load-more').textContent = postIds.length > 0 ? 
-                'No more posts to load' : 'No posts found';
-            
-            // Handle initial hash if present
+            posts.forEach(post => {
+                const postElement = createPostElement(post);
+                container.appendChild(postElement);
+            });
+
+            // Optional: mark when done loading
+            document.querySelector('.load-more').textContent = posts.length > 0
+                ? 'No more posts to load'
+                : 'No posts found';
+
             handleHashChange();
-            
-            // Listen for hash changes
             window.addEventListener('hashchange', handleHashChange);
-        }
 
-        
-                // Start the app when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initializeFeed);
-    </script>
+        } catch (error) {
+            console.error('Error loading feed:', error);
+        }
+    }
+
+    // Start the app when DOM is loaded
+    document.addEventListener('DOMContentLoaded', initializeFeed);
+</script>
+
 </body>
 </html>
