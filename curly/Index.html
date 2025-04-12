@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curly - Gossip, but fuunuuunny. </title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #262626;
+        }
+        
+        .header {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px;
+            border-bottom: 1px solid #dbdbdb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        .feed {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+        
+        .post {
+            background: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            position: relative;
+            scroll-margin-top: 70px;
+        }
+        
+        .post-header {
+            padding: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-pic {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: #ccc;
+        }
+        
+        .title {
+            font-weight: 600;
+        }
+        
+        .post-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #eee;
+            object-fit: cover;
+        }
+        
+        .post-actions {
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .action-left {
+            display: flex;
+        }
+        
+        .action-icon {
+            margin-right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .share-btn {
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .likes {
+            padding: 0 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .caption {
+            padding: 0 15px 15px;
+            position: relative;
+        }
+        
+        .caption .title {
+            margin-right: 5px;
+        }
+        
+        .caption-preview {
+            display: inline;
+        }
+        
+        .caption-full {
+            display: none;
+        }
+        
+        .caption.expanded .caption-preview {
+            display: none;
+        }
+        
+        .caption.expanded .caption-full {
+            display: inline;
+        }
+        
+        .expand-btn {
+            color: #8e8e8e;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        .load-more {
+            text-align: center;
+            padding: 20px;
+            color: #0095f6;
+            font-weight: 600;
+        }
+        
+        .tooltip {
+            position: absolute;
+            top: -40px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        
+        .share-btn:hover .tooltip {
+            opacity: 1;
+        }
+        
+        .custom-alert {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .custom-alert.show {
+            opacity: 1;
+        }
+        
+        :target {
+            animation: highlight 2s ease-out;
+        }
+        
+        @keyframes highlight {
+            0% { box-shadow: 0 0 0 3px #0095f6; }
+            100% { box-shadow: 0 0 0 3px transparent; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+         <!--<img src="/images/curly_logo.png" alt="logo" />-->
+        <h1>Curly</h1>
+        <div>✚</div>
+    </div>
+    
+    <div class="feed" id="feed">
+        <!-- Posts will be added here by JavaScript -->
+    </div>
+    
+    <div class="load-more">Loading posts...</div>
+    
+    <div id="customAlert" class="custom-alert">Link Copied!</div>
+    
+    <script>
+        // Folder structure configuration
+        const CONTENT_FOLDER = 'content';
+        const IMAGE_FOLDER = 'content';
+        
+        // Post IDs - these should match your folder names
+        const postIds = ['output_001', 'output_002', 'output_003', 'output_004', 
+                         'output_005', 'output_006', 'output_007', 'output_008', 
+                         'output_009', 'output_010', 'output_011', 'output_012', 'output_013',
+                        'output_014', 'output_015', 'output_016', 'output_017',
+                        'output_018', 'output_019', 'output_020', 'output_021',
+                        'output_022', 'output_023', 'output_024', 'output_025', 
+                         'output_026', 'output_027', 'output_028', 'output_029', 'output_030',
+                         "output_031", "output_032"];
+        
+        // Function to load text file
+        async function loadTextFile(filename) {
+            try {
+                const response = await fetch(filename);
+                if (!response.ok) throw new Error('File not found');
+                return await response.text();
+            } catch (error) {
+                console.error(`Error loading file ${filename}:`, error);
+                return `Content could not be loaded from ${filename}`;
+            }
+        }
+        
+        // Function to create post data from local files
+        async function createPostData(postId) {
+            const title = await loadTextFile(`${CONTENT_FOLDER}/${postId}/title.txt`);
+            const caption = await loadTextFile(`${CONTENT_FOLDER}/${postId}/summary.txt`);
+            const image = `${IMAGE_FOLDER}/${postId}/image.png`;
+            const likes = Math.floor(Math.random() * 5000).toLocaleString();
+            
+            return {
+                id: postId,
+                title: title.trim(),
+                image: image,
+                likes: likes,
+                caption: caption.trim()
+            };
+        }
+        
+        // Function to truncate text to 60 words
+        function truncateToWords(text, wordCount) {
+            if (!text) return "";
+            const words = text.split(' ');
+            if (words.length <= wordCount) return text;
+            return words.slice(0, wordCount).join(' ') + '...';
+        }
+        
+        // Function to show custom alert
+        function showAlert(message) {
+            const alert = document.getElementById('customAlert');
+            alert.textContent = message;
+            alert.classList.add('show');
+            setTimeout(() => {
+                alert.classList.remove('show');
+            }, 2000);
+        }
+        
+        // Function to copy post link to clipboard
+        function copyPostLink(postId) {
+            const postLink = `${window.location.origin}${window.location.pathname}#${postId}`;
+            navigator.clipboard.writeText(postLink)
+                .then(() => {
+                    showAlert("Link Copied!");
+                })
+                .catch(err => {
+                    console.error('Failed to copy link: ', err);
+                    showAlert("Failed to copy link");
+                });
+        }
+        
+        // Function to create a post element
+        function createPostElement(post) {
+            const previewCaption = truncateToWords(post.caption, 60);
+            const fullCaption = post.caption;
+            const shouldShowExpand = previewCaption !== fullCaption;
+            
+            const postElement = document.createElement('div');
+            postElement.className = 'post';
+            postElement.id = post.id;
+            postElement.innerHTML = `
+                <div class="post-header">
+                    <div class="profile-pic"></div>
+                    <div class="title">${post.title}</div>
+                </div>
+                <img class="post-image" src="${post.image}" alt="Post image" onerror="this.src='https://via.placeholder.com/600?text=Image+Not+Found'">
+                <div class="post-actions">
+                    <div class="action-left">
+                        <span class="action-icon">♥</span>
+                        <span class="action-icon">💬</span>
+                        <span class="action-icon">↗</span>
+                    </div>
+                    <div class="share-btn" title="Share post">
+                        <span class="tooltip">Copy post link</span>
+                        🔗
+                    </div>
+                </div>
+                <div class="likes">${post.likes} likes</div>
+                <div class="caption">
+                    <span class="caption-preview">${previewCaption}</span>
+                    <span class="caption-full">${fullCaption}</span>
+                    ${shouldShowExpand ? '<span class="expand-btn">more</span>' : ''}
+                </div>
+            `;
+            
+            // Add event listeners
+            const expandBtn = postElement.querySelector('.expand-btn');
+            if (expandBtn) {
+                expandBtn.addEventListener('click', function() {
+                    const captionDiv = this.parentElement;
+                    captionDiv.classList.toggle('expanded');
+                    this.textContent = captionDiv.classList.contains('expanded') ? 'less' : 'more';
+                });
+            }
+            
+            postElement.querySelector('.share-btn').addEventListener('click', () => copyPostLink(post.id));
+            
+            return postElement;
+        }
+        
+        // Function to handle hash changes
+        function handleHashChange() {
+            const postId = window.location.hash.substring(1);
+            if (postId) {
+                const postElement = document.getElementById(postId);
+                if (postElement) {
+                    setTimeout(() => {
+                        postElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        }
+        
+        // Initialize the feed
+        async function initializeFeed() {
+            const feed = document.getElementById('feed');
+            
+            // Load and display all posts
+            for (const postId of postIds) {
+                try {
+                    const postData = await createPostData(postId);
+                    const postElement = createPostElement(postData);
+                    feed.appendChild(postElement);
+                } catch (error) {
+                    console.error(`Error loading post ${postId}:`, error);
+                }
+            }
+            
+            // Update loading message
+            document.querySelector('.load-more').textContent = postIds.length > 0 ? 
+                'No more posts to load' : 'No posts found';
+            
+            // Handle initial hash if present
+            handleHashChange();
+            
+            // Listen for hash changes
+            window.addEventListener('hashchange', handleHashChange);
+        }
+
+        
+                // Start the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializeFeed);
+    </script>
+</body>
+</html>
