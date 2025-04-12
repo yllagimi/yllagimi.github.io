@@ -192,7 +192,6 @@
     <div id="posts-container"></div>
         <!-- Posts will be added here by JavaScript -->
     
-    
     <div class="load-more">Loading posts...</div>
     
     <div id="customAlert" class="custom-alert">Link Copied!</div>
@@ -290,29 +289,73 @@
     }
 
     // Main init function
-    async function initializeFeed() {
-        const container = document.getElementById('posts-container');
-        try {
-            const response = await fetch(API_URL);
-            const posts = await response.json();
+// Updated JavaScript section
+async function initializeFeed() {
+    const container = document.getElementById('posts-container');
+    const loader = document.querySelector('.load-more');
+    
+    try {
+        loader.textContent = 'Loading posts...';
+        
+        const response = await fetch(API_URL, {
+            headers: {
+                'Accept': 'application/json',
+                // Add this if you control the API and need to handle CORS
+                // 'Origin': window.location.origin
+            }
+        });
 
-            posts.forEach(post => {
-                const postElement = createPostElement(post);
-                container.appendChild(postElement);
-            });
-
-            // Optional: mark when done loading
-            document.querySelector('.load-more').textContent = posts.length > 0
-                ? 'No more posts to load'
-                : 'No posts found';
-
-            handleHashChange();
-            window.addEventListener('hashchange', handleHashChange);
-
-        } catch (error) {
-            console.error('Error loading feed:', error);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+
+        const posts = await response.json();
+
+        // Check if posts is an array
+        if (!Array.isArray(posts)) {
+            throw new Error('Expected an array of posts but got something else');
+        }
+
+        // Clear container before adding new posts
+        container.innerHTML = '';
+
+        if (posts.length === 0) {
+            loader.textContent = 'No posts found';
+            return;
+        }
+
+        posts.forEach(post => {
+            // Add validation for required fields
+            if (!post.id || !post.title) {
+                console.warn('Invalid post format:', post);
+                return;
+            }
+            
+            const postElement = createPostElement(post);
+            container.appendChild(postElement);
+        });
+
+        loader.textContent = posts.length > 0 
+            ? 'No more posts to load' 
+            : 'No posts found';
+
+        handleHashChange();
+        window.addEventListener('hashchange', handleHashChange);
+
+    } catch (error) {
+        console.error('Error loading feed:', error);
+        loader.textContent = 'Failed to load posts';
+        container.innerHTML = `<div style="text-align: center; padding: 20px; color: red;">
+            Error loading content: ${error.message}
+        </div>`;
     }
+}
+    
+console.log("Fetching from:", API_URL);
+const response = await fetch(API_URL);
+console.log("Response status:", response.status);
+const posts = await response.json();
+console.log("Received posts:", posts);
 
     // Start the app when DOM is loaded
     document.addEventListener('DOMContentLoaded', initializeFeed);
