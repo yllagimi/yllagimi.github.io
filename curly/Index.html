@@ -226,7 +226,7 @@
         
         // Function to create post data from local files
         async function createPostData(postId) {
-        const apiBase = 'https://curly-api.onrender.com/api/posts/';  // Change to your Render URL
+        const apiBase = 'https://curly-api.onrender.com/';  // Change to your Render URL
         try {
         const response = await fetch(`${apiBase}${postId}`);
         if (!response.ok) throw new Error(`Failed to load post ${postId}`);
