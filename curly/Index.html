@@ -254,6 +254,7 @@ function createPostElement(post) {
     // 2. Post Image
     const postImage = document.createElement('img');
     postImage.className = 'post-image';
+    console.log("Image source for post:", post.image);
     postImage.src = post.image || 'https://via.placeholder.com/600?text=No+Image';
     postImage.alt = 'Post image';
     postImage.onerror = function() {
