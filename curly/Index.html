@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="582128756828-4oce6po29vg7e23i0i7k0qotkljsja6f.apps.googleusercontent.com">
     <title>Curly - Gossip, but fuunuuunny. </title>
     <style>
         body {
@@ -191,7 +192,19 @@
          <!--<img src="/images/curly_logo.png" alt="logo" />-->
         <h1>Curly</h1>
         <div>✚</div>
+        
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
+    
+    <a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
     
     <div id="posts-container"></div>
         <!-- Posts will be added here by JavaScript -->
@@ -200,7 +213,13 @@
     
     <div id="customAlert" class="custom-alert">Link Copied!</div>
     
+     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    
 <script>
+    
+      
+    
     const API_URL = 'https://curly-api.onrender.com/posts.json';
 
     // Truncate text to 60 words
@@ -346,6 +365,17 @@ function createPostElement(post) {
     return postElement;
 }
 
+// Google Sign In
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+    
+    
+    
 // Helper function to safely escape HTML (prevent XSS)
 function escapeHtml(text) {
     const div = document.createElement('div');
