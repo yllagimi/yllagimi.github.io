@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="582128756828-4oce6po29vg7e23i0i7k0qotkljsja6f.apps.googleusercontent.com">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <title>Curly - Gossip, but fuunuuunny. </title>
     <style>
         body {
@@ -188,57 +189,63 @@
     </style>
 </head>
 <body>
-    <div class="header">
-         <!--<img src="/images/curly_logo.png" alt="logo" />-->
-        <h1>Curly</h1>
-        <div>✚</div>
-        
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div class="header">
+    <h1>Curly</h1>
+    <div id="g_id_onload"
+         data-client_id="582128756828-4oce6po29vg7e23i0i7k0qotkljsja6f.apps.googleusercontent.com"
+         data-callback="onSignIn"
+         data-auto_prompt="false">
     </div>
-    
-    <a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
-    
-     
-<script>
-    async function checkAuthentication() {
-      const token = await google.accounts.id.getToken();
+    <div class="g_id_signin" 
+         data-type="standard"
+         data-size="medium"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="pill"
+         data-logo_alignment="left">
+    </div>
+    <button onclick="signOut()" style="display:none;" id="signout-btn">Sign out</button>
+  </div>
 
-      if (!token) {
-        // User is not signed in, redirect to login page
-        window.location.href = "/signin";
-      } else {
-        // User is signed in, display content
-        document.getElementById("content").innerHTML = "Welcome! You are signed in.";
-      }
+  <div id="protected-content" style="display:none;">
+    <div id="posts-container"></div>
+    <div class="load-more">Loading posts...</div>
+  </div>
+
+  <div id="customAlert" class="custom-alert">Link Copied!</div>
+
+  <script>
+    function onSignIn(response) {
+      const userData = parseJwt(response.credential);
+      console.log("User:", userData);
+
+      // Show protected content
+      document.getElementById('protected-content').style.display = 'block';
+      document.getElementById('signout-btn').style.display = 'inline-block';
+      document.querySelector('.g_id_signin').style.display = 'none';
+
+      // You can store this in localStorage/sessionStorage if needed
+      initializeFeed();
     }
 
-    // Initialize Google Sign-In
-    google.accounts.id.initialize({
-      client_id: "582128756828-4oce6po29vg7e23i0i7k0qotkljsja6f.apps.googleusercontent.com", // Replace with your client ID
-      callback: checkAuthentication
-    });
+    function parseJwt(token) {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    }
 
-    // Show the One Tap prompt on page load
-    google.accounts.id.prompt();
+    function signOut() {
+      google.accounts.id.disableAutoSelect(); // disables auto login
+      document.getElementById('protected-content').style.display = 'none';
+      document.getElementById('signout-btn').style.display = 'none';
+      document.querySelector('.g_id_signin').style.display = 'block';
+    }
   </script>
     
-    
-    <div id="posts-container"></div>
-        <!-- Posts will be added here by JavaScript -->
-    
-    <div class="load-more">Loading posts...</div>
-    
-    <div id="customAlert" class="custom-alert">Link Copied!</div>
-    
-     <script src="https://apis.google.com/js/platform.js" async defer></script>
+         <script src="https://apis.google.com/js/platform.js" async defer></script>
     
     
 <script>
