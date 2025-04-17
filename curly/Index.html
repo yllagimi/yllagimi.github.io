@@ -374,6 +374,46 @@ function onSignIn(googleUser) {
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }
     
+
+   // Google Sign In - make sure google user is signed in
+ 
+    function onSignIn(googleUser) 
+{
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); 
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+  
+  var myUserEntity = {};
+  myUserEntity.Id = profile.getId();
+  myUserEntity.Name = profile.getName();
+  
+  //Store the entity object in sessionStorage where it will be accessible from all pages of your site.
+  sessionStorage.setItem('myUserEntity',JSON.stringify(myUserEntity));
+
+  alert(profile.getName());   
+}
+
+function checkIfLoggedIn()
+{
+  if(sessionStorage.getItem('myUserEntity') == null){
+    //Redirect to login page, no user entity available in sessionStorage
+    window.location.href='Login.html';
+  } else {
+    //User already logged in
+    var userEntity = {};
+    userEntity = JSON.parse(sessionStorage.getItem('myUserEntity'));
+    ...
+    DoWhatever();
+  }
+}
+
+function logout()
+{
+  //Don't forget to clear sessionStorage when user logs out
+  sessionStorage.clear();
+}
     
     
 // Helper function to safely escape HTML (prevent XSS)
