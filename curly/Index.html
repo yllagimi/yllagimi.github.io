@@ -45,20 +45,19 @@
         }   
         
         
-         .header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 15px;
-            border-bottom: 1px solid #dbdbdb;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-        }
+    .header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: white;
+        padding: 15px 20px; /* top-bottom, left-right */
+        border-bottom: 1px solid #dbdbdb;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+        box-sizing: border-box;
+    }
         
         .header h1 {
             margin: 0;
@@ -254,11 +253,12 @@
         </div>
     
             <div class="load-more">Loading posts...</div>
-            <div id="customAlert" class="custom-alert">Link Copied!</div>
         </main>
-  <script>
+            <div id="customAlert" class="custom-alert">Link Copied!</div>
 
-      
+<script>
+
+        
       function onSignIn(response) {
       const userData = parseJwt(response.credential);
       console.log("User:", userData);
@@ -287,15 +287,11 @@
       document.getElementById('signout-btn').style.display = 'none';
       document.querySelector('.g_id_signin').style.display = 'block';
     }
-  </script>
+</script>
     
-         <script src="https://apis.google.com/js/platform.js" async defer></script>
-    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     
 <script>
-    
-      
-    
     const API_URL = 'https://curly-api.onrender.com/posts.json';
 
     // Truncate text to 60 words
@@ -441,7 +437,6 @@ function createPostElement(post) {
     return postElement;
 }
 
-    
     
 // Helper function to safely escape HTML (prevent XSS)
 function escapeHtml(text) {
