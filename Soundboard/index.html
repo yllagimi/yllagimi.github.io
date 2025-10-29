@@ -81,7 +81,10 @@
         
         <!-- Header -->
         <header class="p-4 bg-green-500 text-white flex justify-between items-center shadow-md sticky top-0 z-20">
-            <h1 class="text-2xl font-bold">Toddler Tunes</h1>
+            <div class="flex items-center gap-3">
+                <img src="mommy_logo.png" alt="Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                <h1 class="text-2xl font-bold">Say Mommy</h1>
+            </div>
             <button id="settings-btn" class="p-2 rounded-full hover:bg-green-600 active:bg-green-700 transition-all">
                 <i data-lucide="settings"></i>
             </button>
@@ -244,19 +247,18 @@
             
             function createStockTiles() {
                 const stockItems = [
-                    { text: 'Apple', color: 'FF6347' },
-                    { text: 'Dog', color: '8A2BE2' },
-                    { text: 'Cat', color: '32CD32' },
-                    { text: 'Car', color: '1E90FF' },
-                    { text: 'Ball', color: 'FFD700' },
-                    { text: 'Daddy', color: 'F08080' }
+                    { text: 'Apple' },
+                    { text: 'Dog' },
+                    { text: 'Cat' },
+                    { text: 'Car' },
+                    { text: 'Ball' }
                 ];
                 
                 return stockItems.map((item, i) => ({
                     id: `tile-stock-${i}`,
                     media: {
-                        type: 'image/png',
-                        src: `https://placehold.co/200x200/${item.color}/FFFFFF?text=${item.text}`
+                        type: 'image/png', // We assume PNG for the stock images
+                        src: `stock_images/${item.text}.png` // Use local images
                     },
                     audio: null
                 }));
@@ -325,6 +327,14 @@
                             const img = document.createElement('img');
                             img.src = data.media.src;
                             img.className = 'tile-media';
+                            // Add error handler for local stock images
+                            img.onerror = function() {
+                                const parent = this.parentElement; // Store the parent
+                                if (parent) { // Check if parent exists
+                                    parent.innerHTML = `<span class="text-red-500 text-xs p-2 text-center">Image not found:<br>${this.src.split('/').pop()}</span>`;
+                                    parent.classList.add('bg-red-50'); // Use the stored parent
+                                }
+                            };
                             tile.appendChild(img);
                         } else if (data.media.type.startsWith('video/')) {
                             const vid = document.createElement('video');
@@ -716,7 +726,7 @@
                     renderTiles();
                     closeModal();
                 }
-D           });
+            });
             
             // --- EVENT LISTENERS ---
             settingsBtn.addEventListener('click', openSettingsModal);
@@ -759,4 +769,5 @@ D           });
     </script>
 </body>
 </html>
+
 
